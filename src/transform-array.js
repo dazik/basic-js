@@ -8,7 +8,8 @@ module.exports = function transform(arr) {
         for (let i = 0; i < arr.length; i++) {
             switch (arr[i]) {
                 case '--discard-next':
-                    i++;
+                    i += 2;
+                    console.log(i);
                     break;
                 case '--discard-prev':
                     mod_arr.pop();
@@ -16,7 +17,7 @@ module.exports = function transform(arr) {
                 case '--double-next':
                     if (arr[i + 1] != undefined) {
                         mod_arr.push(arr[i + 1]);
-                    };
+                    }
                     break;
                 case '--double-prev':
                     if (arr[i - 1] != undefined) {
@@ -28,6 +29,7 @@ module.exports = function transform(arr) {
                     break;
             };
         };
+        console.log(mod_arr + ' = ' + arr);
         return mod_arr;
     } else throw Error;
 };

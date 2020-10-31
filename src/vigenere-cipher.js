@@ -39,9 +39,6 @@ class VigenereCipheringMachine {
         key = key.toUpperCase();
         let msgArray = message.split(''),
             keyArray = key.split('');
-        if (this.mode === false) {
-            msgArray = msgArray.reverse();
-        }
         while (keyArray.length < msgArray.length) {
             keyArray = keyArray.concat(keyArray);
         }
@@ -57,6 +54,9 @@ class VigenereCipheringMachine {
                 resArray.push(msgArray[i]);
             }
 
+        }
+        if (this.mode === false) {
+            resArray = resArray.reverse();
         }
         return resArray.join('');
 

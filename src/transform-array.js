@@ -9,7 +9,7 @@ module.exports = function transform(arr) {
             switch (arr[i]) {
                 case '--discard-next':
                     i += 2;
-                    console.log(i);
+                    //console.log(i);
                     break;
                 case '--discard-prev':
                     mod_arr.pop();
@@ -29,7 +29,7 @@ module.exports = function transform(arr) {
                     break;
             };
         };
-        console.log(mod_arr + ' = ' + arr);
+        //console.log(mod_arr + ' = ' + arr);
         return mod_arr;
     } else throw Error;
 };
